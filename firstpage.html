@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Happy 5 Months Together</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: url('image.jpg') no-repeat center center fixed; /* Add your background image */
+            background-size: cover; /* Cover the entire page */
+            color: #333;
+            position: relative;
+        }
+        h1 {
+            color: #7d0707;
+            margin-top: 50px;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8f0202;
+        }
+        .heart-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Send the heart GIFs behind the text */
+        }
+        .heart {
+            position: absolute;
+            width: 120px; /* Adjust the size of the hearts */
+            transform: translate(-50%, -50%);
+        }
+        /* Customize heart positions */
+        .heart2 { top: 180%; left: 50%; }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy 5 Months together, My Love! ❤️💍</h1>
+    <p>Tap the button to reveal the next surprise!</p>
+    <button onclick="window.location.href='secondpage.html'">Reveal</button>
+
+    <!-- Stationary Heart GIFs -->
+    <div class="heart-container">
+        <img class="heart heart2" src="heart1.gif" alt="Heart GIF 2">
+    </div>
+</body>
+</html>

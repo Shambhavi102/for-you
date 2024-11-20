@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Message</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-color: #ffe4e1;
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        .final-message {
+            position: relative;
+            z-index: 10; /* Ensure this stays above the falling hearts */
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ff6f61;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            display: inline-block;
+            animation: glow 2s infinite;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 10;
+            position: relative;
+        }
+        button:hover {
+            background-color: #e85a50;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #ff6f61;
+            }
+            50% {
+                box-shadow: 0 0 20px #ff6f61;
+            }
+            100% {
+                box-shadow: 0 0 5px #ff6f61;
+            }
+        }
+
+        /* Falling hearts */
+        .heart {
+            width: 20px;
+            height: 20px;
+            background-color: #ff6f61;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            animation: fall linear infinite;
+            clip-path: polygon(50% 0%, 0% 40%, 25% 100%, 75% 100%, 100% 40%);
+            z-index: 1; /* Ensure hearts fall behind the message */
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Prevent hearts from covering the message */
+        .message-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <!-- Final Message Wrapper -->
+    <div class="message-wrapper">
+        <h1>🎉 Message for you!! 🎉</h1>
+        <div class="final-message">
+            (Before reading this know that I really mean each and every word!)<br>
+            
+            <br>So Mr. Brijesh uk I feel really really lucky to have you by my side. 
+            Know that the moment of our first meet will always stay in my heart rentfree.
+            And as uh and I know, that now I'm your girlfriend ( Obv your future wife as you have no other option my pretty boy!!) 
+            And you are mine. Let me say it again "YOU ARE MINE MR. BRIJESH!"
+            God I'm just so so happy, not at all lying!!
+            I wanna make every moment of yours special.
+            I wanna give you everything coz you deserve all the happiness my boy.
+            Ik sometimes I do stupid things, I even mess up things, I'm not that perfect. 
+            And tbh I even know that you will handle me well coz you always do!  
+            I really wanna become better for you. I really want to.
+            You are mine, and I would embrace any change in me if it's for you.
+            Brijesh uk the feeling I get after knowing tht I have you beside me is so warm.
+            You are my comfort, my home!! really!!
+            You really don't know how precious you are for me.
+            You are the first person with whom I wanna share any of my achievement and everything else I'm happy about.
+            Not only that but even when I feel upset or nothing feels right all I need is you.
+            Udk but hearing your voice just calms all my thoughts!
+            Don't leave me, okay?
+            Even if something goes wrong I just need you!!
+            Many more things are there but let's keep it for some other day!
+            I Love You Brijesh!!❤️💍
+        </div>
+        <button onclick="window.location.href='firstpage.html'">Back to Start</button>
+    </div>
+
+    <!-- Falling hearts -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            const leftPosition = Math.random() * 100 + 'vw';
+            console.log('Heart left position:', leftPosition); // Debugging statement
+            heart.style.left = leftPosition;
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+
+            // Remove the heart after the animation
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Create multiple hearts every 200ms
+        setInterval(createHeart, 200);
+    </script>
+</body>
+</html>
